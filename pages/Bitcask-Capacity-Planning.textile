@@ -4,15 +4,18 @@ This calculator will assist you in sizing your cluster if you plan to use the de
 
 h3. Bitcask Calculator
 
-Estimated average key size: <input type="text" size="4" name="key_size" id="key_size">
-Average Bytes Per Value: <input type="text" size="4" name="value_size" id="value_size">
-RAM per node (in GB): <input type="text" size="4" name="ram" id="ram">
-Number of Nodes: <input type="text" size="4" name="nodes" id="nodes">
+Estimated average key size: <input type="text" size="4" name="key_size" id="key_size" value="32">
+Average Bytes Per Value: <input type="text" size="8" name="value_size" id="value_size" value="5000">
+RAM per node (in GB): <input type="text" size="4" name="ram" id="ram" value="4">
+Number of Nodes: <input type="text" size="4" name="nodes" id="nodes" value="3">
+<i>N</i> (Number of Write Copies): <input type="text" size="2" name="nval" id="nval" value="3">
+
 
 
 Key Overhead: <span id="key_overhead"></span>
 Total Documents: <span id="total_documents"></span>
-
+Total Disk Space: <span id="total_disk_space"></span>
+Nodes Per 10 Million Records: <span id="millions"></span>
 
 
 
