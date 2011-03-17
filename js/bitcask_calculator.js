@@ -98,12 +98,18 @@ function NodeCalculator(){
   
   this.nodes = function () {  
     var nnodes = ((this.key_size() * this.total_keys())*this.nval())/this.ram()
+    if(nnodes < 1) {
+      nnodes = 3
+    }
     return nnodes.toFixed()
   }
   
   
   this.update_nodes = function () {
     var disk = (((this.record_size() * this.total_keys())/1073741824)/this.nodes()).toFixed()
+    if(disk < 1){
+      disk = "Less than 1"
+    }
     $('#node_count').text(this.nodes()+" ("+disk+" GB Storage per Node)")
 
   }
