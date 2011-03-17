@@ -11,11 +11,13 @@ RAM per node (in GB): <input type="text" size="4" name="n_ram" id="n_ram" value=
 <i>N</i> (Number of Write Copies): <input type="text" size="2" name="nval" id="nval" value="3">
 
 Node Count: <span id="node_count"></span>
-Disk Space Per Node: <span id="node_disk"></span>
+
 
 <br/>
 
 h3. Bitcask Calculator
+
+<div id="entry_info"></div>
 
 Average Key Size: <input type="text" size="4" name="key_size" id="key_size" value="32">
 Average Record Size: <input type="text" size="8" name="value_size" id="value_size" value="5000">

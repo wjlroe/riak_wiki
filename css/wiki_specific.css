@@ -45,3 +45,7 @@ h5:hover a.toc-anchor,
 h6:hover a.toc-anchor {
    display: inline;
 }
+
+div#entry_info {
+  font-size: 60%;
+  color: red;
