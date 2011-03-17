@@ -1,0 +1,18 @@
+This calculator will assist you in sizing your cluster if you plan to use the default Bitcask storage backend.
+
+<div id="toc"></div>
+
+h3. Bitcask Calculator
+
+Estimated average key size: <input type="text" size="4" name="key_size" id="key_size">
+Average Bytes Per Value: <input type="text" size="4" name="value_size" id="value_size">
+RAM per node (in GB): <input type="text" size="4" name="ram" id="ram">
+Number of Nodes: <input type="text" size="4" name="nodes" id="nodes">
+
+
+Key Overhead: <span id="key_overhead"></span>
+Total Documents: <span id="total_documents"></span>
+
+
+
+

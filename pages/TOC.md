@@ -18,6 +18,7 @@
   * [[Installing with Chef]]
   * [[Setting Up Innostore]]
   * [[Basic Cluster Setup]]
+  * [[Bitcask Capacity Planning]]
   * [[Configuration Files]]
   * [[Command-Line Tools]]
   * [[Open Files Limit]]
