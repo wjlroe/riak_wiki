@@ -13,40 +13,40 @@ $(document).ready(function(){
   }
   
   //nodes handlers
-  $('#n_total_keys').change(function () {    
+  $('#n_total_keys').keypress(function () {    
     node_calculator.update_nodes()
   });
-  $('#n_key_size').change(function () {    
+  $('#n_key_size').keypress(function () {    
     node_calculator.update_nodes()
   });
-  $('#n_record_size').change(function () {    
+  $('#n_record_size').keypress(function () {    
     node_calculator.update_nodes()
   });
-  $('#n_ram').change(function () {    
+  $('#n_ram').keypress(function () {    
     node_calculator.update_nodes()
   });
   
-  $('#nval').change(function () {    
+  $('#nval').keypress(function () {    
     node_calculator.update_nodes()
   })
   
-  $('#total').change(function () {    
+  $('#total').keypress(function () {    
     node_calculator.update_nodes()
   })
   
 
   
   //bitcask handlers
-  $('#key_size').change(function () {    
+  $('#key_size').keypress(function () {    
     bitcask_calculator.update_overhead()
   });
-  $('#nodes').change(function () {
+  $('#nodes').keypress(function () {
     bitcask_calculator.update_capacity()
   });
-  $('#value_size').change(function () {
+  $('#value_size').keypress(function () {
     bitcask_calculator.update_capacity()
   });
-  $('#ram').change(function () {
+  $('#ram').keypress(function () {
     bitcask_calculator.update_capacity()
   });
   
