@@ -4,10 +4,10 @@ These calculators will assist you in sizing your cluster if you plan to use the 
 
 h3. Node Calculator
 
-Total Keys: <input type="text" size="12" name="n_total_keys" id="n_total_keys" value="100000000">
+Total Number of Keys: <input type="text" size="12" name="n_total_keys" id="n_total_keys" value="100000000">
 Average Record Size (Bytes): <input type="text" size="7" name="n_record_size" id="n_record_size" value="5000">
 Average Key Size: <input type="text" size="2" name="n_key_size" id="n_key_size" value="32">
-RAM per node (in GB): <input type="text" size="4" name="n_ram" id="n_ram" value="4">
+RAM Per Node (in GB): <input type="text" size="4" name="n_ram" id="n_ram" value="4">
 <i>N</i> (Number of Write Copies): <input type="text" size="2" name="nval" id="nval" value="3">
 
 Node Count: <span id="node_count"></span>
