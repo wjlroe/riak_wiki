@@ -28,6 +28,13 @@ $(document).ready(function(){
     calculator.update_millions()
   });
   
+  
+  $('#key_size').focusin(function () {  
+     $('#entry_info').text = "Estimate Average Key Size:  This is the approximate size of your keys, measured in bytes. Why does this matter? In addition to the standard 40 byte per key overhead that Bitcask requires, you need to factor in the key's actual size that will be unique to your application and use case."
+   });
+   $('#key_size').focusout(function () {    
+     $('#entry_info').text = ""
+   });
 
 })
 

@@ -1,21 +1,33 @@
-This calculator will assist you in sizing your cluster if you plan to use the default Bitcask storage backend.
+These calculators will assist you in sizing your cluster if you plan to use the default Bitcask storage backend.
 
 <div id="toc"></div>
 
-h3. Bitcask Calculator
+h3. Node Calculator
 
-Estimated average key size: <input type="text" size="4" name="key_size" id="key_size" value="32">
-Average Bytes Per Value: <input type="text" size="8" name="value_size" id="value_size" value="5000">
-RAM per node (in GB): <input type="text" size="4" name="ram" id="ram" value="4">
-Number of Nodes: <input type="text" size="4" name="nodes" id="nodes" value="3">
+Total Keys: <input type="text" size="12" name="n_total_keys" id="n_total_keys" value="100000000">
+Average Record Size (Bytes): <input type="text" size="7" name="n_record_size" id="n_record_size" value="5000">
+Average Key Size: <input type="text" size="2" name="n_key_size" id="n_key_size" value="32">
+RAM per node (in GB): <input type="text" size="4" name="n_ram" id="n_ram" value="4">
 <i>N</i> (Number of Write Copies): <input type="text" size="2" name="nval" id="nval" value="3">
 
+Node Count: <span id="node_count"></span>
+Disk Space Per Node: <span id="node_disk"></span>
+
+<br/>
+
+h3. Bitcask Calculator
+
+Average Key Size: <input type="text" size="4" name="key_size" id="key_size" value="32">
+Average Record Size: <input type="text" size="8" name="value_size" id="value_size" value="5000">
+RAM Per Node (in GB): <input type="text" size="4" name="ram" id="ram" value="4">
+Number of Nodes: <input type="text" size="4" name="nodes" id="nodes" value="3">
 
 
 Key Overhead: <span id="key_overhead"></span>
 Total Documents: <span id="total_documents"></span>
 Total Disk Space: <span id="total_disk_space"></span>
-Nodes Per 10 Million Records: <span id="millions"></span>
+
+
 
 
 
