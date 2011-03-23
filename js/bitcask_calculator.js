@@ -1,71 +1,69 @@
-$(document).ready(function(){
-  if($('#key_size').length == 0){
-    return
-  }else{
-    
-    node_calculator = new NodeCalculator()
-    node_calculator.update_nodes()
-    
-    bitcask_calculator = new BitcaskCalculator()
-    bitcask_calculator.update_overhead()
-    bitcask_calculator.update_capacity()
-     
-  }
-  
-  //nodes handlers
-  $('#n_total_keys').keypress(function () {    
-    node_calculator.update_nodes()
-  });
-  $('#n_key_size').keypress(function () {    
-    node_calculator.update_nodes()
-  });
-  $('#n_record_size').keypress(function () {    
-    node_calculator.update_nodes()
-  });
-  $('#n_ram').keypress(function () {    
-    node_calculator.update_nodes()
-  });
-  
-  $('#nval').keypress(function () {    
-    node_calculator.update_nodes()
-  })
-  
-  $('#total').keypress(function () {    
-    node_calculator.update_nodes()
-  })
-  
 
+util = { 
+	
+	isInt: function(n) {
+		//right now just checking numeric 
+	    return n===+n ;//&& n===(n|0)
+	},
+	
+	default_vals: {
+		n_total_keys: 100000000,
+		n_key_size: 32,
+		n_record_size: 5000,
+		n_ram: 4,
+		nval: 9,
+		key_size: 32,
+		value_size: 5000,
+		ram: 4,
+		nodes: 3
+	}	
+}
+
+$(document).ready(function(){
+	$.each(util.default_vals, function(k,v){
+		$("#"+k).val(v)
+	})
+	
+    if($('#key_size').length == 0){
+		return
+	}else{
   
-  //bitcask handlers
-  $('#key_size').keypress(function () {    
-    bitcask_calculator.update_overhead()
-  });
-  $('#nodes').keypress(function () {
-    bitcask_calculator.update_capacity()
-  });
-  $('#value_size').keypress(function () {
-    bitcask_calculator.update_capacity()
-  });
-  $('#ram').keypress(function () {
-    bitcask_calculator.update_capacity()
-  });
+		node_calculator = new NodeCalculator()
+		node_calculator.update_nodes()
   
-  $('#key_size').focusin(function () {    
-    $('#entry_info').text("This is the approximate size of your keys, measured in bytes. Why does this matter? In addition to the standard 40 byte per key overhead that Bitcask requires, you need to factor in the key's actual size that will be unique to your application and use case.")
-  });
+		bitcask_calculator = new BitcaskCalculator()
+		bitcask_calculator.update_overhead()
+		bitcask_calculator.update_capacity()
+   
+	}
+
+	//nodes handlers
+	$('#n_total_keys, #n_key_size, #n_record_size, #n_ram, #nval, #total').keyup(function () { 
+		node_calculator.update_nodes()
+	})
+
+
+
+	//bitcask handlers
+	$('#key_size').keyup(function () {    
+		bitcask_calculator.update_overhead()
+	});
+	$('#nodes, #value_size, #ram').keyup(function () {
+		bitcask_calculator.update_capacity()
+	});
+
+	$('#key_size').focusin(function () {    
+	  $('#entry_info').text("This is the approximate size of your keys, measured in bytes. Why does this matter? In addition to the standard 40 byte per key overhead that Bitcask requires, you need to factor in the key's actual size that will be unique to your application and use case.")
+	});
+
+	$('#value_size').focusin(function () {    
+	  $('#entry_info').text("This is how large you expect your values to be. We use this variable to calculate how much disk space you'll need in your cluster. ")
+	});
+
+	$('#key_size, #value_size').focusout(function () {    
+	  $('#entry_info').text("")
   
-  $('#value_size').focusout(function () {    
-    $('#entry_info').text("")
-    
-  });
-  $('#value_size').focusin(function () {    
-    $('#entry_info').text("This is how large you expect your values to be. We use this variable to calculate how much disk space you'll need in your cluster. ")
-  });
-  
-  $('#key_size').focusout(function () {    
-    $('#entry_info').text("")
-    
-  });
+	});
   
 })
 
