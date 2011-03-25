@@ -135,7 +135,7 @@ function BitcaskCalculator(){
     return ram * parseFloat($('#nodes').val())
   }
   this.total_doc_raw = function () {
-    return total_doc_count = this.total_ram()/this.key_overhead()
+    return total_doc_count = ( this.total_ram()/this.key_overhead() ) / this.nval()
     
     
   }
