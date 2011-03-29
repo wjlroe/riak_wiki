@@ -1,17 +1,12 @@
 
 util = { 
 	
-	isInt: function(n) {
-		//right now just checking numeric 
-	    return n===+n ;//&& n===(n|0)
-	},
-	
 	default_vals: {
 		n_total_keys: 100000000,
 		n_key_size: 32,
-		n_record_size: 5000,
+		n_record_size: 2000,
 		n_ram: 4,
-		nval: 9,
+		nval: 3,
 		key_size: 32,
 		value_size: 5000,
 		ram: 4,
@@ -39,6 +34,14 @@ $(document).ready(function(){
 
 	//nodes handlers
 	$('#n_total_keys, #n_key_size, #n_record_size, #n_ram, #nval, #total').keyup(function () { 
+	  
+	  $.each(util.default_vals, function(k,v){
+	    $("#"+k+"_error").text("")
+	    if(!/(^-?\d\d*$)/.test($("#"+k).val())){
+	      $("#"+k+"_error").text("Must be an integer")
+	    }
+  	})
+
 		node_calculator.update_nodes()
 	})
 
@@ -157,10 +160,5 @@ function BitcaskCalculator(){
   this.update_capacity = function () {
     $('#total_documents').text(this.total_docs())
     $('#total_disk_space').text(this.disk_space() + " GB of Disk Space")
-  }
-  
-  
-
-  
-  
+  } 
 }

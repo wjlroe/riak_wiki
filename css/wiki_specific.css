@@ -55,3 +55,8 @@ div#entry_info {
   width: 400px;
   height: 50px;
 }
+
+span.error_span {
+  color: red;
+  margin-left: 5px;
+}

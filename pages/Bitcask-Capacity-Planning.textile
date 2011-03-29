@@ -4,11 +4,11 @@ These calculators will assist you in sizing your cluster if you plan to use the 
 
 h3. Node Calculator
 
-Total Number of Keys: <input type="text" size="12" name="n_total_keys" id="n_total_keys" value="">
-Average Record Size (Bytes): <input type="text" size="7" name="n_record_size" id="n_record_size" value="">
-Average Key Size: <input type="text" size="2" name="n_key_size" id="n_key_size" value="">
-RAM Per Node (in GB): <input type="text" size="4" name="n_ram" id="n_ram" value="">
-<i>N</i> (Number of Write Copies): <input type="text" size="2" name="nval" id="nval" value="">
+Total Number of Keys: <input type="text" size="12" name="n_total_keys" id="n_total_keys" value=""><span class="error_span" id="n_total_keys_error"></span>
+Average Record Size (Bytes): <input type="text" size="7" name="n_record_size" id="n_record_size" value=""><span class="error_span"id="n_record_size_error"></span>
+Average Key Size: <input type="text" size="2" name="n_key_size" id="n_key_size" value=""><span class="error_span" id="n_key_size_error"></span>
+RAM Per Node (in GB): <input type="text" size="4" name="n_ram" id="n_ram" value=""><span class="error_span" id="n_ram_error"></span>
+<i>N</i> (Number of Write Copies): <input type="text" size="2" name="nval" id="nval" value=""><span class="error_span" id="nval_error"></span>
 
 Node Count: <span id="node_count"></span>
 
@@ -19,10 +19,10 @@ h3. Bitcask Calculator
 
 <div id="entry_info"></div>
 
-Average Key Size: <input type="text" size="4" name="key_size" id="key_size" value="">
-Average Record Size: <input type="text" size="8" name="value_size" id="value_size" value="">
-RAM Per Node (in GB): <input type="text" size="4" name="ram" id="ram" value="">
-Number of Nodes: <input type="text" size="4" name="nodes" id="nodes" value="">
+Average Key Size: <input type="text" size="4" name="key_size" id="key_size" value=""><span class="error_span" id="key_size_error"></span>
+Average Record Size: <input type="text" size="8" name="value_size" id="value_size" value=""><span class="error_span" id="value_size_error"></span>
+RAM Per Node (in GB): <input type="text" size="4" name="ram" id="ram" value=""><span class="error_span" id="ram_error"></span>
+Number of Nodes: <input type="text" size="4" name="nodes" id="nodes" value=""><span class="error_span"  id="nodes_error"></span>
 
 
 Key Overhead: <span id="key_overhead"></span>
