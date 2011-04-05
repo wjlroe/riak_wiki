@@ -1,4 +1,18 @@
+/* @override http://localhost:8000/css/wiki_specific.css */
+
 div#main article > h1 { display: none; }
+
+input.calc_input {
+
+}
+
+div.calculator ul {
+  list-style-type: none;
+  margin: 0;
+}
+div.calculator li {
+  margin-top: 7px;
+}
 
 div.info, div.note {
     margin: 1em 0 !important;
