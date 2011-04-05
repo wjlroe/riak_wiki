@@ -12,8 +12,7 @@ To calculate the number of nodes you will need in your Riak cluster you will nee
 <li>Average Key Size: <input type="text" size="2" name="n_key_size" id="n_key_size" value="" class="calc_input"><span class="error_span" id="n_key_size_error"></span></li>
 <li>RAM Per Node (in GB): <input type="text" size="4" name="n_ram" id="n_ram" value="" class="calc_input"><span class="error_span" id="n_ram_error"></span></li>
 <li><i>N</i> (Number of Write Copies): <input type="text" size="2" name="nval" id="nval" value="" class="calc_input"><span class="error_span" id="nval_error"></span></li>
-<li>&nbsp;</li>
-<li>Node Count: <span id="node_count"></span></li>
+<li><b>Node Count:</b> <span id="node_count"></span></li>
 </ul>
 
 
@@ -34,10 +33,9 @@ This calculator will allow you to calculate the total storage capacity of a Riak
 <li>Average Record Size: <input type="text" size="8" name="value_size" id="value_size" value="" class="calc_input"><span class="error_span" id="value_size_error"></span></li>
 <li>RAM Per Node (in GB): <input type="text" size="4" name="ram" id="ram" value="" class="calc_input"><span class="error_span" id="ram_error"></span></li>
 <li>Number of Nodes: <input type="text" size="4" name="nodes" id="nodes" value="" ><span class="error_span"  id="nodes_error"></span></li>
-<li>&nbsp;</li>
-<li>Key Overhead: <span id="key_overhead"></span></li>
-<li>Total Documents: <span id="total_documents"></span></li>
-<li>Total Disk Space: <span id="total_disk_space"></span></li>
+<li><b>Key Overhead:</b> <span id="key_overhead"></span></li>
+<li><b>Total Documents:</b> <span id="total_documents"></span></li>
+<li><b>Total Disk Space:</b> <span id="total_disk_space"></span></li>
 </div>
 
 
