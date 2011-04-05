@@ -6,6 +6,7 @@ util = {
 		n_key_size: 32,
 		n_record_size: 2000,
 		n_ram: 4,
+		n_nval: 3,
 		nval: 3,
 		key_size: 32,
 		value_size: 5000,
@@ -33,7 +34,7 @@ $(document).ready(function(){
 	}
 
 	//nodes handlers
-	$('#n_total_keys, #n_key_size, #n_record_size, #n_ram, #nval, #total').keyup(function () { 
+	$('#n_total_keys, #n_key_size, #n_record_size, #n_ram, #n_nval, #total').keyup(function () { 
 	  
 	  $.each(util.default_vals, function(k,v){
 	    $("#"+k+"_error").text("")
@@ -51,7 +52,7 @@ $(document).ready(function(){
 	$('#key_size').keyup(function () {    
 		bitcask_calculator.update_overhead()
 	});
-	$('#nodes, #value_size, #ram').keyup(function () {
+	$('#nodes, #value_size, #ram, #nval').keyup(function () {
 		bitcask_calculator.update_capacity()
 	});
 
@@ -88,7 +89,7 @@ function NodeCalculator(){
   }
 
   this.nval = function () {
-    return parseFloat($('#nval').val())
+    return parseFloat($('#n_nval').val())
   }
   
   
