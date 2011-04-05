@@ -42,6 +42,7 @@ $(document).ready(function(){
 	    $("#"+k+"_error").text("")
 	    if(!/(^-?\d\d*$)/.test($("#"+k).val())){
 	      $("#"+k+"_error").text("Must be an integer")
+	      return
 	    }
   	})
 
@@ -61,7 +62,10 @@ $(document).ready(function(){
 	$('#key_size').focusin(function () {    
 	  $('#entry_info').text("This is the approximate size of your keys, measured in bytes. Why does this matter? In addition to the standard 40 byte per key overhead that Bitcask requires, you need to factor in the key's actual size that will be unique to your application and use case.")
 	});
-
+  $('#bucket_size').focusin(function () {    
+	  $('#entry_info').text("This is the approximate size of your bucket name, measured in bytes.")
+	});
+	
 	$('#value_size').focusin(function () {    
 	  $('#entry_info').text("This is how large you expect your values to be. We use this variable to calculate how much disk space you'll need in your cluster. ")
 	});
@@ -107,7 +111,7 @@ function NodeCalculator(){
   this.nodes = function () {  
 
     var nnodes = (((this.key_size()+this.bucket_size()) * this.total_keys())*this.nval())/this.ram()
-    if(nnodes < 1) {
+    if(nnodes < 3) {
       nnodes = 3
     }
     return Math.ceil(nnodes)
@@ -131,7 +135,7 @@ function BitcaskCalculator(){
   
   this.key_overhead = function () {
     var key_size = parseFloat($('#key_size').val())
-    return key_size + 40
+    return key_size + this.bucket_size() + 40
   }
   
   this.bucket_size = function () {
@@ -155,7 +159,7 @@ function BitcaskCalculator(){
   }
   
   this.total_doc_raw = function () {
-    return Math.ceil(this.total_ram()/((this.key_overhead()+this.bucket_size())*this.nval()))
+    return Math.ceil(this.total_ram()/(this.key_overhead()*this.nval()))
   }
   
   this.total_docs = function () {

@@ -38,7 +38,7 @@ This calculator will allow you to calculate the total storage capacity of a Riak
 <li><i>N</i> (Number of Write Copies): <input type="text" size="2" name="nval" id="nval" value="" class="calc_input"><span class="error_span" id="nval_error"></span></li>
 <li><b>Key Overhead:</b> <span id="key_overhead"></span></li>
 <li><b>Total Documents:</b> <span id="total_documents"></span></li>
-<li><b>Total Disk Space:</b> <span id="total_disk_space"></span></li>
+<li><b>Total Disk Used:</b> <span id="total_disk_space"></span></li>
 </div>
 
 
