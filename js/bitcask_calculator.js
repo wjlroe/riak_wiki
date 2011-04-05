@@ -138,12 +138,13 @@ function BitcaskCalculator(){
     var ram = parseFloat($('#ram').val()) * 1073741824
     return ram * parseFloat($('#nodes').val())
   }
-  this.total_doc_raw = function () {
-    return total_doc_count = ( this.total_ram()/(this.key_overhead() ) * this.nval())
+  this.total_docs = function () {
     
+    return this.total_doc_raw().toFixed().toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
     
   }
   this.total_docs = function () {
+    console.log(this.total_doc_raw())
     return this.total_doc_raw().toFixed().toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
     
   }
