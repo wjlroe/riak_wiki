@@ -1,11 +1,13 @@
 These calculators will assist you in sizing your cluster if you plan to use the default Bitcask storage backend.
 
 <div id="toc"></div>
-
 h3. Node Calculator
 
-Total Number of Keys: <input type="text" size="12" name="n_total_keys" id="n_total_keys" value=""><span class="error_span" id="n_total_keys_error"></span>
-Average Record Size (Bytes): <input type="text" size="7" name="n_record_size" id="n_record_size" value=""><span class="error_span"id="n_record_size_error"></span>
+To calculate the number of nodes you will need in your Riak cluster you will need to know: the total number of keys you plan to store, the size of the keys, and total amount of RAM per node.  Basho recommends having a minimum of 3 nodes in your Riak cluster. 
+
+
+Total Number of Keys: <input id="n_total_keys"  type="text" size="12" name="n_total_keys" value=""><span class="error_span" id="n_total_keys_error"></span>
+Average Record Size (Bytes): <input id="n_record_size"type="text" size="7" name="n_record_size" value=""/><span class="error_span"id="n_record_size_error"></span>
 Average Key Size: <input type="text" size="2" name="n_key_size" id="n_key_size" value=""><span class="error_span" id="n_key_size_error"></span>
 RAM Per Node (in GB): <input type="text" size="4" name="n_ram" id="n_ram" value=""><span class="error_span" id="n_ram_error"></span>
 <i>N</i> (Number of Write Copies): <input type="text" size="2" name="nval" id="nval" value=""><span class="error_span" id="nval_error"></span>
@@ -15,10 +17,13 @@ Node Count: <span id="node_count"></span>
 
 <br/>
 
+
+
 h3. Bitcask Calculator
 
-<div id="entry_info"></div>
+This calculator will allow you to calculate the total storage capacity of a Riak cluster by providing the key size, RAM per node, and the total number of nodes you will have in the cluster. Using this calculator will assist you in long term capacity planning by increasing the amount of nodes or RAM per node.
 
+<div id="entry_info"></div>
 Average Key Size: <input type="text" size="4" name="key_size" id="key_size" value=""><span class="error_span" id="key_size_error"></span>
 Average Record Size: <input type="text" size="8" name="value_size" id="value_size" value=""><span class="error_span" id="value_size_error"></span>
 RAM Per Node (in GB): <input type="text" size="4" name="ram" id="ram" value=""><span class="error_span" id="ram_error"></span>
