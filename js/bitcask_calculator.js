@@ -5,11 +5,13 @@ util = {
 		n_total_keys: 100000000,
 		n_key_size: 32,
 		n_record_size: 2000,
+		n_bucket_size: 16,
 		n_ram: 4,
 		n_nval: 3,
 		nval: 3,
 		key_size: 32,
-		value_size: 5000,
+		bucket_size: 16,
+		value_size: 2000,
 		ram: 4,
 		nodes: 3
 	}	
@@ -34,7 +36,7 @@ $(document).ready(function(){
 	}
 
 	//nodes handlers
-	$('#n_total_keys, #n_key_size, #n_record_size, #n_ram, #n_nval, #total').keyup(function () { 
+	$('#n_total_keys, #n_bucket_size, #n_key_size, #n_record_size, #n_ram, #n_nval, #total').keyup(function () { 
 	  
 	  $.each(util.default_vals, function(k,v){
 	    $("#"+k+"_error").text("")
@@ -92,6 +94,10 @@ function NodeCalculator(){
     return parseFloat($('#n_nval').val())
   }
   
+  this.bucket_size = function () {
+    return parseFloat($('#n_bucket_size').val())
+  }
+  
   
   this.ram = function (){
     return parseFloat($('#n_ram').val()) * 1073741824
@@ -99,20 +105,21 @@ function NodeCalculator(){
 
   
   this.nodes = function () {  
-    var nnodes = ((this.key_size() * this.total_keys())*this.nval())/this.ram()
+
+    var nnodes = (((this.key_size()+this.bucket_size()) * this.total_keys())*this.nval())/this.ram()
     if(nnodes < 1) {
       nnodes = 3
     }
-    return nnodes.toFixed()
+    return Math.ceil(nnodes)
   }
   
   
   this.update_nodes = function () {
-    var disk = (((this.record_size() * this.total_keys())/1073741824)/this.nodes()).toFixed()
+    var disk = (((this.record_size() * this.total_keys())*this.nval())/1073741824)/this.nodes()
     if(disk < 1){
       disk = "Less than 1"
     }
-    $('#node_count').text(this.nodes()+" ("+disk+" GB Storage per Node)")
+    $('#node_count').text(this.nodes()+" ("+Math.ceil(disk)+" GB Storage per Node)")
 
   }
   
@@ -126,9 +133,17 @@ function BitcaskCalculator(){
     var key_size = parseFloat($('#key_size').val())
     return key_size + 40
   }
+  
+  this.bucket_size = function () {
+    return parseFloat($('#bucket_size').val())
+  }
+  
+  
   this.value_size = function () {
     return parseFloat($('#value_size').val())
   }
+  
+
   this.nval = function () {
     return parseFloat($('#nval').val())
   }
@@ -138,20 +153,22 @@ function BitcaskCalculator(){
     var ram = parseFloat($('#ram').val()) * 1073741824
     return ram * parseFloat($('#nodes').val())
   }
-  this.total_docs = function () {
-    
-    return this.total_doc_raw().toFixed().toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
-    
+  
+  this.total_doc_raw = function () {
+    return Math.ceil(this.total_ram()/((this.key_overhead()+this.bucket_size())*this.nval()))
   }
+  
   this.total_docs = function () {
-    console.log(this.total_doc_raw())
-    return this.total_doc_raw().toFixed().toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
+    return this.total_doc_raw().toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")  
+  }
+  
+  this.total_docs = function () {
+    return this.total_doc_raw().toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
     
   }
   
-
   this.disk_space = function () {
-    var disk_space_raw = ((this.total_ram()/this.key_overhead())*this.value_size())/1073741824
+    var disk_space_raw = ((this.value_size()*this.total_doc_raw())*this.nval())/1073741824
     return disk_space_raw.toFixed().toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
   }
   
