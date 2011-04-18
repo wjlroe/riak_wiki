@@ -60,7 +60,7 @@ $(document).ready(function(){
 	});
 
 	$('#key_size').focusin(function () {    
-	  $('#entry_info').text("This is the approximate size of your keys, measured in bytes. Why does this matter? In addition to the standard 40 byte per key overhead that Bitcask requires, you need to factor in the key's actual size that will be unique to your application and use case.")
+	  $('#entry_info').text("This is the approximate size of your keys, measured in bytes. Why does this matter? In addition to the standard 22 byte per key overhead that Bitcask requires, you need to factor in the key's actual size that will be unique to your application and use case.")
 	});
   $('#bucket_size').focusin(function () {    
 	  $('#entry_info').text("This is the approximate size of your bucket name, measured in bytes.")
@@ -91,7 +91,7 @@ function NodeCalculator(){
   
   this.key_size = function () {
     var key_size = parseFloat($('#n_key_size').val())
-    return key_size + 40
+    return key_size + 22
   }
 
   this.nval = function () {
@@ -135,7 +135,7 @@ function BitcaskCalculator(){
   
   this.key_overhead = function () {
     var key_size = parseFloat($('#key_size').val())
-    return key_size + this.bucket_size() + 40
+    return key_size + this.bucket_size() + 22
   }
   
   this.bucket_size = function () {
@@ -177,7 +177,7 @@ function BitcaskCalculator(){
   }
   
   this.update_overhead = function () {
-    $('#key_overhead').text(this.key_overhead() + " Bytes (40 Byte Overhead)")
+    $('#key_overhead').text(this.key_overhead() + " Bytes (22 Byte Overhead)")
   }
   
   this.update_capacity = function () {
