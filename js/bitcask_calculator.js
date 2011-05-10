@@ -2,15 +2,15 @@
 util = { 
 	
 	default_vals: {
-		n_total_keys: 100000000,
-		n_key_size: 32,
+		n_total_keys: 50000000,
+		n_key_size: 15,
 		n_record_size: 2000,
-		n_bucket_size: 16,
+		n_bucket_size: 15,
 		n_ram: 4,
 		n_nval: 3,
 		nval: 3,
-		key_size: 32,
-		bucket_size: 16,
+		key_size: 15,
+		bucket_size: 15,
 		value_size: 2000,
 		ram: 4,
 		nodes: 3
@@ -28,6 +28,7 @@ $(document).ready(function(){
   
 		node_calculator = new NodeCalculator()
 		node_calculator.update_nodes()
+		node_calculator.update_keydir()
   
 		bitcask_calculator = new BitcaskCalculator()
 		bitcask_calculator.update_overhead()
@@ -45,7 +46,7 @@ $(document).ready(function(){
 	      return
 	    }
   	})
-
+    node_calculator.update_keydir()
 		node_calculator.update_nodes()
 	})
 
@@ -90,8 +91,8 @@ function NodeCalculator(){
   }
   
   this.key_size = function () {
-    var key_size = parseFloat($('#n_key_size').val())
-    return key_size + 22
+    var key_size = parseFloat($('#n_key_size').val())+22
+    return key_size
   }
 
   this.nval = function () {
@@ -106,11 +107,22 @@ function NodeCalculator(){
   this.ram = function (){
     return parseFloat($('#n_ram').val()) * 1073741824
   }
-
+  
+  this.keydir_calc = function () {
+    var total_size = ((this.key_size()+this.bucket_size())*this.total_keys()*this.nval())/1073741824
+    return Math.round(total_size*10)/10
+    
+    
+    return ((this.key_size()+this.bucket_size()) * this.total_keys() *this.nval())/1073741824
+  }
   
   this.nodes = function () {  
 
     var nnodes = (((this.key_size()+this.bucket_size()) * this.total_keys())*this.nval())/this.ram()
+
+    if(nnodes < this.nval()) {
+      nnodes = this.nval()
+    }
     if(nnodes < 3) {
       nnodes = 3
     }
@@ -127,6 +139,9 @@ function NodeCalculator(){
 
   }
   
+  this.update_keydir = function () {
+    $('#node_keydir').text(this.keydir_calc()+" GB")
+  }
   
 }
 

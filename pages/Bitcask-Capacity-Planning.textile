@@ -13,7 +13,10 @@ To calculate the number of nodes you will need in your Riak cluster you will nee
 <li>Average Value Size (Bytes): <input id="n_record_size"type="text" size="7" name="n_record_size" value="" class="calc_input"><span class="error_span"id="n_record_size_error"></span></li>
 <li>RAM Per Node (in GB): <input type="text" size="4" name="n_ram" id="n_ram" value="" class="calc_input"><span class="error_span" id="n_ram_error"></span></li>
 <li><i>N</i> (Number of Write Copies): <input type="text" size="2" name="n_nval" id="n_nval" value="" class="calc_input"><span class="error_span" id="n_nval_error"></span></li>
+<li><b>Total Key Space:</b> <span id="node_keydir"></span></li>
 <li><b>Node Count:</b> <span id="node_count"></span></li>
+
+
 </ul>
 
 
@@ -23,7 +26,7 @@ To calculate the number of nodes you will need in your Riak cluster you will nee
 
 
 
-h3. Bitcask Calculator
+h3. Bitcask Storage Calculator
 
 This calculator will allow you to calculate the total storage capacity of a Riak cluster by providing the key size, RAM per node, and the total number of nodes you will have in the cluster. Using this calculator will assist you in long term capacity planning by increasing the amount of nodes or RAM per node.
 
