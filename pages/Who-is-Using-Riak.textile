@@ -228,7 +228,7 @@ XL59 uses Riak as a distributed data store in its cloud-based data distribution 
 ----
 
 <notextile>
-<a id="digitar">
+<a name="digitar">
 <img src="attachments/digitar.png"><br>
 </a>
 </notextile>
@@ -244,7 +244,7 @@ Riak has allowed us to focus on what we love to do - building awesome services f
 ----
 
 <notextile>
-<a id="pikkotekk">
+<a name="pikkotekk">
 <img src="attachments/PikkoTekkLogo.png"><br>
 </a>
 </notextile>
@@ -254,5 +254,40 @@ Riak has allowed us to focus on what we love to do - building awesome services f
 
 One product from UnityPark, *uGame NoSQL*, is based on Riak. This integration software combines the strength of Unity and Riak and makes it easy for all Unity game developers to start using Riak when the game needs a scalable distributed database on the server side. Unity is the game engine with the largest user base in the world and it is growing fast.
 
+--- 
+
+<notextile>
+<a name="yammer">
+<img src="attachments/yammer_logo.png"><br>
+</a>
+</notextile>
+
+"Yammer":www.yammer.com is the leader in enterprise social networking, providing a secure way for employees to communicate, collaborate, and share information.
+
+Yammer recently built and deployed *Streamie*, a mission-critical application that uses Riak as the primary datastore. Want to learn more? There's "a great write up and video on the Basho Blog":http://blog.basho.com/2011/03/28/Riak-and-Scala-at-Yammer/ that will tell you all about it.
 
 
+---
+
+<notextile>
+<a name="aol">
+<img src="attachments/AOL_logo.jpg"><br>
+</a>
+</notextile>
+
+
+"AOL":http://www.aol.com/ is a global Web services company with a suite of brands and offerings. The Company’s business spans online content, products and services that it offers to consumers, publishers and advertisers
+
+The Adlearn project at a AOL has 5 nodes of Riak playing a non-trivial role in a system that delivers over 1.5 billion impressions a day. You can read more about how AOL is using Riak "here":http://www.progski.net/blog/2011/aol_meet_riak.html.
+
+---
+
+<notextile>
+<a name="mig">
+<img src="attachments/mig_logo.jpg"><br>
+</a>
+</notextile>
+
+Mobile Interactive Group "(MIG)":http://www.migcan.com/ is a globally integrated mobile and digital communications business and is the fastest growing privately owned technology company in the UK and EMEA.
+
+*David Dawson, Head of Technology, Mobile Interactive Group (MIG) commented* "We use Riak as a persistent storage layer for many of our mission-critical systems, including our international SMS Gateway which was built from the ground up to be fully scalable, high performing, and data-centre redundant, whilst also maintaining a low operational footprint."

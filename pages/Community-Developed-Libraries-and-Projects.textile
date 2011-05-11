@@ -15,6 +15,9 @@ h2. Client Libraries and Frameworks
 * [[clj-riak|http://github.com/mmcgrana/clj-riak]] - Clojure bindings to the Riak Protocol Buffers API
 * [[teriak|http://github.com/dysinger/teriak]] - Riak Clojure Client that uses Riak's Protocol Buffers API
 
+*Django*
+* [[django-riak-sessions|https://bitbucket.org/stodge/django-riak-session]]
+
 *Go* (Go is a language recently released by Google. Read more about it [[here|http://golang.org/]].)
 * [[riak.go|http://github.com/c141charlie/riak.go]] - a Riak Client for Go
 
@@ -23,6 +26,9 @@ h2. Client Libraries and Frameworks
 
 *Groovy*
 * [[spring-riak|https://github.com/jbrisbin/spring-riak]] - Riak support from Groovy and/or Java
+
+*Erlang*
+* [[riakpool|https://github.com/dweldon/riakpool]] - Application for maintaining a dynamic pool of Protocol Buffer client connections to a Riak database
 
 *Haskell*
 * [[Riak Haskell Client|https://github.com/mailrank/riak-haskell-client]] - A fast Haskell client library from the team at MailRank.
@@ -59,6 +65,7 @@ h2. Client Libraries and Frameworks
 * [[txriakidx|https://github.com/williamsjj/txriakidx]] - Riak client for Twisted Python that implements transparent indexes
 
 *Ruby*
+* [[Risky|https://github.com/aphyr/risky]] - A lightweight Ruby ORM for Riak 
 * [[Riak Model|http://github.com/botanicus/riak-model]]
 * [[Riak DataObjects adapter|http://github.com/botanicus/do_riak]]
 * [[Riak_Client|http://github.com/technoweenie/riak_client]]
@@ -90,10 +97,18 @@ h2. Monitoring, Management and GUI Tools
 	
 h2. Backup Tools
 
-* [[Brackup|http://code.google.com/p/brackup/]] - A modern net-based backup system that supports de-duplication, intelligent chunking, and gpg-based-encryption.
+* [[Brackup|http://code.google.com/p/brackup/]] - A modern net-based backup system that supports de-duplication, intelligent chunking, and gpg-based-encryption
+
+h2. riak_core
+
+* [[rebar_riak_core|https://github.com/websterclay/rebar_riak_core]] - Rebar templates for generating riak_core applications
+* [[Try Try Try|https://github.com/rzezeski/try-try-try/]] - Ryan Zezeski's working blog that explores many aspects of riak_core (this is an amazing resource)
+* [[riak_zab|https://github.com/jtuple/riak_zab]] - an extension for riak_core that provides totally ordered atomic broadcast capabilities 
+* [[riak_zab_example|https://github.com/jtuple/riak_zab_example]] - an example application that allows you to build a multi-node cluster using riak_zab
 
 h2. Other Tools and Projects
 
+* [[riak-exchange|https://github.com/jbrisbin/riak-exchange]] - Custom RabbitMQ exchange type for sticking messages in Riak 
 * [[ring-session-riak|https://github.com/ossareh/ring-session-riak]] - A Riak implementation for Ring Session
 * [[Riak to CSV Export|https://github.com/bradfordw/riak_csv]] - A simple way to export your Riak buckets to CSV files
 * [[Couch to Riak|http://github.com/mattsta/couchdb/tree/couch_file-to-riak]]
