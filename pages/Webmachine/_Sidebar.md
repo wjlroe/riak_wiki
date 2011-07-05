@@ -1,8 +1,10 @@
+[[Home]] &gt; [[Webmachine]]
+
 * [[How It Works|Webmachine Mechanics]]
 * [[Quickstart|Webmachine Quickstart]]
 * [[Demo|Webmachine Demo]]
 * [[Dispatching|Webmachine Dispatching]]
-* [[request|Webmachine Request]]
+* [[Request|Webmachine Request]]
 * [[Resource|Webmachine Resource]]
 * [[Streamed Body|Webmachine Streamed Body]]
 * [[Debugging|Webmachine Debugging]]

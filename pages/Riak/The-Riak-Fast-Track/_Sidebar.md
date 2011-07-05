@@ -1,3 +1,5 @@
+[[Home]] > [[Riak]] > [[The Riak Fast Track]]
+
 * [[What is Riak?]]
 * [[Building a Development Environment]]
 * [[Basic Riak API Operations]]

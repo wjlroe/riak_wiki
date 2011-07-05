@@ -1,3 +1,5 @@
+[[Home]] > [[Riak]] > [[Developers]]
+
 * [[Client Libraries]]
   * [[Java|Riak Java Client]]
   * [[Erlang|Riak Erlang Clients]]

@@ -1,3 +1,5 @@
+[[Home]] > [[Riak]] > [[Operations]]
+
 * [[System Requirements]]
 * [[Adding and Removing Nodes]]
 * [[Stopping and Restarting a Cluster]]

@@ -1,3 +1,5 @@
+[[Home]] > [[Riak]]
+
 * [[The Riak Fast Track]]
 * [[Installation|Installation and Setup]]
 * [[Concepts|An Introduction to Riak]]
