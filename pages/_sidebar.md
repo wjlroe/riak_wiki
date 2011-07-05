@@ -1,3 +1,4 @@
+<nav id="sidebar" class="wiki">
 * [[Wiki Home|Home]]
 * [[The Riak Fast Track]]
   * [[What is Riak?]]
@@ -100,10 +101,11 @@
   * [[Quickstart|Webmachine Quickstart]]
   * [[Demo|Webmachine Demo]]
   * [[Dispatching|Webmachine Dispatching]]
-  * [[Request|Webmachine Request]]
+  * [[request|Webmachine Request]]
   * [[Resource|Webmachine Resource]]
   * [[Streamed Body|Webmachine Streamed Body]]
   * [[Debugging|Webmachine Debugging]]
   * [[Flow Diagram|Webmachine Diagram]]
   * [[Referential Transparency|Webmachine Referential Transparency]]
 * [[Logos]]
+</nav>
