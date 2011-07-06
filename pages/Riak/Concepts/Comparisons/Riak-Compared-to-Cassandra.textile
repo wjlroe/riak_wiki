@@ -58,7 +58,7 @@ h2. Flexible Data Model
 
 Riak buckets are created on the fly when they are first accessed. This allows an application to evolve its data model easily.
 
-_[[Data Storage in Riak|An Introduction to Riak#Data Storage]]_
+_[[Data Storage in Riak|Concepts#Data Storage]]_
 
 
 In contrast, the Cassandra Keyspaces and Column Families (akin to Databases and Tables) are defined in an XML file. Changing the data-model at this level requires a rolling reboot of the entire cluster.

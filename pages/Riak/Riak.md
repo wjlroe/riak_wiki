@@ -15,7 +15,7 @@ A truly fault-tolerant system, Riak has no single point of failure. No machine i
 [[The Riak Fast Track|The-Riak-Fast-Track]] is a 45 minute interactive tutorial that introduces the basics of using and understanding Riak, from building a three node cluster up through MapReduce. This is the quickest way to get a handle on what Riak is all about.
 
 ### An Introduction to Riak
-The [[high level tour of Riak|An-Introduction-to-Riak]] will give you a thorough overview of concepts and architectural decisions at work in Riak. 
+The [[high level tour of Riak|Concepts]] will give you a thorough overview of concepts and architectural decisions at work in Riak. 
 
 In addition to that Introduction, the following resources should also bring you up to speed with the various aspects of Riak:
 

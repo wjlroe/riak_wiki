@@ -91,6 +91,6 @@ But, there is always more Riak learning to be done, so here is a list of next st
 
 * If you'd like more general information about Riak, check out our collections of [[Publications]], [[Slides|Slide Decks]], and [[Videos]]
 * For more info on how to interact with Riak from your language of choice, start with [[Client Libraries]]
-* To download a platform-specific package of Riak, check out [[Getting Started|Installation and Setup]]
+* To download a platform-specific package of Riak, check out [[Getting Started|Installation]]
 * If you're interested in knowing how Riak stacks up to a few other databases, have a look at [[Riak Comparisons|Riak Comparisons]]
 * If you want to have a look at the Riak Source you can do so on [[GitHub|http://github.com/basho/riak]]

@@ -80,8 +80,8 @@ You should get a response that looks like this:
 h2. Now what?
 
 You have a working Riak system! From here you might want to check out:
-* [[Client Libraries for connecting Riak to your favorite programming language|Client Libraries and Community Code]]
+* [[Client Libraries for connecting Riak to your favorite programming language|Client Libraries]]
 * Get some [[Sample Data]]
 * [[Add more nodes to your Riak cluster|Basic Cluster Setup]]
-* [[The high level overview of the Riak design and functionality|An Introduction to Riak]]
-* [[The more in depth look at how Riak works|How Things Work]].
+* [[The high level overview of the Riak design and functionality|Concepts]]
+* [[Day-to-day system operations|Operations]]

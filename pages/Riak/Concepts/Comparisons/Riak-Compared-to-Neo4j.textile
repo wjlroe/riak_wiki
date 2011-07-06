@@ -28,7 +28,7 @@ h2. Data Model
 
 Riak allows you to store semi-structured documents or objects of varying sizes. Riak is equally adept at storing a user profile, an image, an .mp3, a purchase order, or session information for a website.
 
-[[Data Storage in Riak|An Introduction to Riak#DataStorage]]
+[[Data Storage in Riak|Concepts#DataStorage]]
 
 In contrast, Neo4j stores data using nodes, relationships (imagine a line connecting the nodes), and properties. You can associate a list of properties on the node and the relationship. Properties are limited to Java primitives (int, byte, float, etc.), Strings, or an array of primitives and Strings. Relationships are typed, allowing you to express things like "PersonA KNOWS PersonB" and "PersonA IS_RELATED_TO PersonC".
 
