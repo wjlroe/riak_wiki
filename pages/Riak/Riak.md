@@ -8,7 +8,7 @@ A truly fault-tolerant system, Riak has no single point of failure. No machine i
 
 ### Downloads
 * [Download a Riak Package](http://downloads.basho.com/riak/CURRENT/)
-* [[Build Riak on your Preferred Operating System|Installation-and-Setup]]
+* [[Build Riak on your Preferred Operating System|Installation]]
 * [Get the Riak Source on GitHub](https://github.com/basho/riak)
 
 ### The Riak Fast Track
