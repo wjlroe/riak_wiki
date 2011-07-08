@@ -9,7 +9,7 @@
 * [[Links]]
 * [[MapReduce]]
   * [[Key Filters]]
-* [[Commit Hooks|Pre- and Post-Commit Hooks]]
+* [[Commit Hooks]]
 * [[Luwak]]  
 * [[Riak Search]]
   * [[Schema|Riak Search - Schema]]
