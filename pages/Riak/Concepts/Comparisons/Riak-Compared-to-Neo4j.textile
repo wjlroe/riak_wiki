@@ -39,7 +39,7 @@ h2. Conflicting Writes
 
 Riak can detect when two processes try to update the same data with conflicting information by means of a vector clock. In a distributed environment, this happens more often than you would think: a client may update a cached version of an object, or a network split may have caused a client to delay its write. Riak can detect both of these cases, and uses the vector clock to determine which update should win, or to bubble the conflicting versions (called siblings) up to the client, where the application can choose which version wins, often with input from the user. (Think of what happens when two people edit a Wiki at the same time.)
 
-[Vector Clocks|Riak Glossary#Vector-Clocks]
+[[Vector Clocks]]
 
 In contrast, Neo4j supports configurable ACID transactions, similar to a traditional RDBMS. This allows a client to update a section of the graph in an isolated environment, hiding changes from other processes until the transaction is committed. If multiple transactions try to modify the same data, the Neo4j kernel will try to synchronize them. If interdependencies between the transactions would cause a deadlock, this will be detected and a corresponding exception will be thrown.
 
