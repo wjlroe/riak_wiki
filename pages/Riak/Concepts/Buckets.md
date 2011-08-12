@@ -8,38 +8,38 @@ be gossiped around the ring.
 
 ## Configuration
 
-For each bucket a number of configuration properties can be selectively defined
+For each bucket a number of configuration properties can be selectively defined,
 overriding the defaults.
 
-**n_val**
+### n_val
 
 *integer* (default: `3`). Specifies the number of copies of each object to be
 stored in the cluster. See [[Replication]].
 
-**allow_mult**
+### allow_mult
 
 *boolean* (default: `false`). Determines whether sibling values can be created.
 See [[Siblings|Vector Clocks#Siblings]].
 
-**last_write_wins**
+### last_write_wins
 
 *boolean* (default: `false`). Indicates if an object's vector clocks will be
 used to decide the canonical write based on time of write in the case of a
 conflict. See [[Conflict resolution|Concepts#Conflict-resolution]].
 
-**r**, **pr**, **w**, **dw**, **pw**, **rw**
+### r, pr, w, dw, pw, rw
 
 `all`, `quorum`, `one`, or an *integer* (default: `quorum`). Sets for reads and
 writes the number of responses required before an operation is considered
 successful. See [[Reading Data|Concepts#Reading-Data]] and [[Writing and
 Updating Data|Concepts#Writing and Updating Data]].
 
-**precommit**
+### precommit
 
 A list of erlang or javascript functions to be executed before writing an
 object. See [[Pre-Commit Hooks|Commit-Hooks#Pre-Commit-Hooks]].
 
-**postcommit**
+### postcommit
 
 A list of erlang functions to be executed after writing an object. See
 [[Post-Commit Hooks|Commit-Hooks#Post-Commit-Hooks]].
