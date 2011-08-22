@@ -25,5 +25,4 @@
   * [[Innostore|Innostore Tuning]]
 * [[Network Security and Firewall Configurations]]
 * [[Benchmarking]]
-  <!-- * [[Basho Bench|Benchmarking with Basho Bench]] -->
 * [[Release Notes]]

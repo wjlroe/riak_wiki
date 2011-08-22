@@ -5,6 +5,6 @@
 * [[Concepts]]
 * [[Developers]]
 * [[Operations]]
-* [[Riak EnterpriseDS]] <!--[new: link to info, and link to help.basho.com for EDS wiki]-->
+* [[Riak EnterpriseDS]]
 * [[Community]]
 * [[Recommended Resources]]
