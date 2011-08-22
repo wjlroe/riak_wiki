@@ -12,7 +12,7 @@
 * [[Riak's HTTP API|HTTP API]]
 * [[Install Riak|Installation]]
 * [[MapReduce in Riak|MapReduce]]
-* [[Riak Compared to MongoDB]]
+* [[Riak Comparisons]]
 
 ## Other Basho Software Documentation
 
