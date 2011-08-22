@@ -2,7 +2,7 @@
 
 This section contains information pertinent to operating Riak.
 
-Basics:
+## Basics
 
 * [[System Requirements]]
 * [[Storage Backends]]
@@ -12,7 +12,7 @@ Basics:
   * [[Cache|Cache Backend]]
   * [[Multi|Multi Backend]]
 
-Configuration and Management:
+## Configuration and Management:
 
 * [[Configuration Files]]
 * [[Adding and Removing Nodes]]
@@ -25,7 +25,7 @@ Configuration and Management:
   * [[Open Files Limit]]
   * [[Riak Search|Riak Search - Operations and Troubleshooting]]
   
-Best Practices:
+## Best Practices
   
 * [[Capacity Planning]]
   * [[Cluster|Cluster Capacity Planning]]
@@ -35,7 +35,7 @@ Best Practices:
   * [[Innostore|Innostore Tuning]]
 * [[Network Security and Firewall Configurations]]
 
-Additional Information:
+## Additional Information
 
 * [[Benchmarking]]
 * [[Release Notes]]
