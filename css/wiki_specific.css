@@ -147,3 +147,31 @@ span.error_span {
   margin-left: 5px;
 }
 
+/* breadcrumbs */
+#main {
+   position: relative;
+}
+
+#sidebar p {
+   position: absolute;
+   top: 0;
+   left: 205px;
+   font-size: 90%;
+   line-height: 2;
+   width: 790px;
+   border-bottom: 1px dotted #eee;
+   color: #999;
+   z-index: 0
+}
+
+#sidebar p a, #sidebar p a:visited {
+   color: #999;
+}
+
+#main article {
+   margin-top: 2.75em;
+}
+
+ul.dropdown {
+   z-index: 1
+}
