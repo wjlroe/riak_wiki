@@ -4,12 +4,16 @@ Below is a list of terms and their applicability within the context of Riak:
 
 h2. Bucket
 
-A Bucket is a container and keyspace for data stored in Riak, with a set of common properties for its contents (the number of replicas, for instance).  Buckets are accessed at the top of the URL hierarchy under "riak", e.g. @/riak/bucket@.
-* [[Take a more in depth look at Bucket Operations|HTTP API#Bucket Operations]]
+A Bucket is a container and keyspace for data stored in Riak, with a set of common properties for its contents (the number of replicas, or *n_val*, for instance).  Buckets are accessed at the top of the URL hierarchy under "riak", e.g. @/riak/bucket@.
+* [[Take a more in-depth look at Bucket Operations|HTTP API#Bucket Operations]]
+
+h2. Cluster
+
+A Riak cluster is a 160-bit integer space which is divided into equally-sized partitions. Each vnode in the Riak Ring is responsible for one of these partitions.
 
 h2. Consistent Hashing
 
-Consistent hashing is a technique used to limit the reshuffling of keys when a hash-table data structure is rebalanced (when slots are added or removed). Riak uses consistent hashing to organize its data storage and replication. A Riak cluster is a 160-bit integer space which is divided into equally-sized partitions. Each vnode in the Riak Ring is responsible for one of these partitions, and the location on the ring responsible for storing each object in Riak is determined using the consistent hashing technique.
+Consistent hashing is a technique used to limit the reshuffling of keys when a hash-table data structure is rebalanced (when slots are added or removed). Riak uses consistent hashing to organize its data storage and replication. Specifically, the vnodes in the Riak Ring responsible for storing each object are determined using the consistent hashing technique.
 * [[More on Consistent Hashing|http://en.wikipedia.org/wiki/Consistent_hashing]]
 
 h2. Gossiping
@@ -18,7 +22,7 @@ Riak uses a "gossip protocol" to share and communicate ring state and bucket pro
 
 h2. Hinted Handoff
 
-Hinted handoff is a technique for dealing with node failure in the Riak cluster in which neighboring nodes temporarily takeover storage operations for the failed node.  When the failed node returns to the cluster, the updates received by the neighboring nodes are handed off to it.
+Hinted handoff is a technique for dealing with node failure in the Riak cluster in which neighboring nodes temporarily take over storage operations for the failed node.  When the failed node returns to the cluster, the updates received by the neighboring nodes are handed off to it.
 
 Hinted handoff allows Riak to ensure database availability.  When a node fails, Riak can continue to handle requests as if the node were still there.
 
@@ -41,7 +45,7 @@ Merkle Trees are used in Riak to determine which objects on a node need updating
 
 h2. Node
 
-A node is analogous to a physical server. Nodes run a certain number of vnodes, which in turn claim a set number of partition in the Riak Ring key space.
+A node is analogous to a physical server. Nodes run a certain number of vnodes, each of which claims a partition in the Riak Ring key space.
 
 h2. Object
 
@@ -49,7 +53,7 @@ An object is another name for a value.
 
 h2. Partition
 
-Partitions are the spaces into which a Riak cluster is divided. Each vnode in Riak is responsible for a partition, and data will be stored on a set number of partitions determined statically based on an object's key.
+Partitions are the spaces into which a Riak cluster is divided. Each vnode in Riak is responsible for a partition. Data are stored on a set number of partitions determined by the *n_val* setting, with the target partitions chosen statically by applying consistent hashing to an object's key.
 
 h2. Quorum
 
@@ -60,7 +64,7 @@ Quorum in Riak has two meanings:
 
 h2. Read Repair
 
-Read repair is an anti-entropy mechanism used by Riak to optimistically update stale replicas when they reply to a read request with stale data.
+Read repair is an anti-entropy mechanism Riak uses to optimistically update stale replicas when they reply to a read request with stale data.
 
 * [[More about Read Repair|Replication]]
 
@@ -70,7 +74,7 @@ Replicas are copies of data stored in Riak. The number of replicas required for 
 
 h2. Ring
 
-The Riak Ring is a 160-bit integer space. This space is equally divided into partitions, which are claimed by vnodes, which reside on actual physical server nodes.
+The Riak Ring is a 160-bit integer space. This space is equally divided into partitions, each of which is claimed by a vnode, which themselves reside on actual physical server nodes.
 
 h2. Value
 
@@ -84,4 +88,4 @@ Riak utilizes vector clocks (or _vclock_) to handle version control. Since any n
 
 h2. Vnode
 
-Vnodes, or "virtual nodes" are responsible for claiming a partition in the Riak Ring, and they coordinate requests for these partitions. Vnodes map to physical nodes in a Riak cluster, and the number of vnodes on each physical node is determined by the number of active physical nodes in the cluster.
+Vnodes, or "virtual nodes" are responsible for claiming a partition in the Riak Ring, and they coordinate requests for these partitions. Vnodes reside on physical nodes in a Riak cluster, and the number of vnodes per physical node is determined by the total number of vnodes and the number of active physical nodes in the cluster. Riak balances the assignment of vnodes across the active physical nodes.
