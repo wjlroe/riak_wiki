@@ -279,32 +279,32 @@ storage backend is specified.
 
 Available backends:
 
-- **riak_kv_bitcask_backend**  
-  Data is stored in [[Bitcask|https://github.com/basho/bitcask]] append-only 
-  storage. See the [[Bitcask|Bitcask#Configuring-Bitcask]] configuration page 
+- **riak_kv_bitcask_backend**
+  Data is stored in [[Bitcask|https://github.com/basho/bitcask]] append-only
+  storage. See the [[Bitcask|Bitcask#Configuring-Bitcask]] configuration page
   for more information.
-- **riak_kv_eleveleb_backend**  
-  Data is stored in [[LevelDB|https://github.com/basho/eleveldb]]. See the 
-  [[LevelDB|LevelDB#Configuring-eLevelDB]] configuration page for more 
+- **riak_kv_eleveldb_backend**
+  Data is stored in [[LevelDB|https://github.com/basho/eleveldb]]. See the
+  [[LevelDB|LevelDB#Configuring-eLevelDB]] configuration page for more
   information.
-- **riak_kv_innostore_backend**  
-  Data is stored in [[Innostore|https://github.com/basho/innostore]]. Innostore 
-  is a seperate install. For more information on installation and configuration, 
+- **riak_kv_innostore_backend**
+  Data is stored in [[Innostore|https://github.com/basho/innostore]]. Innostore
+  is a seperate install. For more information on installation and configuration,
   read the [[Innostore|Innostore#Configuring-Innostore]] page.
-- **riak_kv_memory_backend**  
-  A backend that behaves as an LRU-with-timed-expiry cache. Read the 
-  [[Memory|Memory#Configuring-the-Memory-Backend]] backend configuration page 
+- **riak_kv_memory_backend**
+  A backend that behaves as an LRU-with-timed-expiry cache. Read the
+  [[Memory|Memory#Configuring-the-Memory-Backend]] backend configuration page
   for more information.
-- **riak_kv_multi_backend**  
-  Enables storing data for different buckets in different backends. See the 
-  [[Multi|Multi#Configuring-Multiple-Backends]] configuration page for more 
+- **riak_kv_multi_backend**
+  Enables storing data for different buckets in different backends. See the
+  [[Multi|Multi#Configuring-Multiple-Backends]] configuration page for more
   details.
 
 ### riak_search
 
 [[Riak Search]] is now enabled via the app.config. To enable it in your app, simply set it to "true" in Riak Search Config section (shown below).
 
-```erlang 
+```erlang
 
 %% Riak Search Config
 {riak_search, [
@@ -346,9 +346,9 @@ as well as play nicely with standard logging tools.
 
 Allows the selection of log handlers with differing options.
 
-- **lager_console_backend**  
+- **lager_console_backend**
 Logs to the the console, with the specified log level.
-- **lager_file_backend**  
+- **lager_file_backend**
 Logs to the given list of files, each with their own log level.
 
 #### crash_log
